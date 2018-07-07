@@ -47,6 +47,10 @@ describe DataMigrate::DataMigrator do
       expect(migrated.count).to eq 4
       expect(migrated).to include 20090000000000
       expect(migrated).to include 20110000000000
+
+      DataMigrate.configure do |config|
+        config.schema_data_migrations = nil
+      end
     end
 
   end

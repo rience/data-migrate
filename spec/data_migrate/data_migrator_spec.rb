@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe DataMigrate::DataMigrator do
   let(:subject) { DataMigrate::DataMigrator }
@@ -34,7 +34,7 @@ describe DataMigrate::DataMigrator do
       expect(migrated).to include 20110000000000
     end
 
-    it 'load legacy migrations' do
+    it "load legacy migrations" do
       DataMigrate.configure do |config|
         config.schema_data_migrations = true
       end

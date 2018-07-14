@@ -27,7 +27,7 @@ module DataMigrate
 
       def get_all_versions(connection = ActiveRecord::Base.connection)
         if table_exists?(connection, schema_migrations_table_name)
-          versions = DataMigrate::DataSchemaMigration.all.map { |x| x.version.to_i }.sort
+          DataMigrate::DataSchemaMigration.all.map { |x| x.version.to_i }.sort
         else
           []
         end
